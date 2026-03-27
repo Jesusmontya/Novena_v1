@@ -35,13 +35,13 @@
             overflow-x: hidden;
         }
 
-        /* FONDO DINÁMICO SUTIL (Movido al contenedor principal para ocultar el video al bajar) */
+        /* FONDO DINÁMICO SUTIL */
         .main-content-wrapper {
             background: linear-gradient(-45deg, var(--color-black), var(--color-dark-grey), var(--color-black), #111111);
             background-size: 400% 400%;
             animation: subtleDarkGradient 25s ease infinite;
             position: relative;
-            z-index: 2; /* Se asegura de pasar por encima del video fijo */
+            z-index: 2; 
         }
 
         @keyframes subtleDarkGradient {
@@ -122,11 +122,10 @@
             height: 100vh; 
             display: flex;
             align-items: center;
-            /* Se quitó el overflow hidden para permitir la estructura limpia */
         }
         
         .hero-video {
-            position: fixed; /* Esto hace que se quede congelado al hacer scroll */
+            position: fixed; 
             top: 0;
             left: 0;
             width: 100%;
@@ -135,9 +134,8 @@
             z-index: 0;
         }
 
-        /* Capa oscura sobre el video */
         .hero-overlay {
-            position: fixed; /* Acompaña al video congelado */
+            position: fixed; 
             top: 0;
             left: 0;
             width: 100%;
@@ -148,7 +146,7 @@
 
         .hero-content {
             position: relative;
-            z-index: 2; /* Mantiene el texto por encima del video y la capa oscura */
+            z-index: 2; 
             margin-top: 60px; 
             width: 100%;
         }
@@ -182,6 +180,31 @@
             border: 1px solid var(--color-white);
             color: var(--color-white);
             transform: scale(1.03);
+        }
+
+        /* --- BOTONES DE REDES SOCIALES (NUEVO) --- */
+        .social-glass-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            color: var(--color-white);
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .social-glass-btn:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: var(--color-white);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
         }
 
         .card-img-top {
@@ -309,7 +332,7 @@
                         <div class="card glass-card">
                             <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop" class="card-img-top" alt="Jóvenes">
                             <div class="card-body text-center p-4">
-                                <h4 class="fw-bold mt-2 text-white">Jovenes</h4>
+                                <h4 class="fw-bold mt-2 text-white">Adolecentes</h4>
                                 <p class="text-grey-sub small">Grupos pequeños y eventos para jóvenes que buscan propósito.</p>
                             </div>
                         </div>
@@ -318,7 +341,7 @@
                         <div class="card glass-card">
                             <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" class="card-img-top" alt="Universitarios">
                             <div class="card-body text-center p-4">
-                                <h4 class="fw-bold mt-2 text-white">Adultos</h4>
+                                <h4 class="fw-bold mt-2 text-white">Jovenes</h4>
                                 <p class="text-grey-sub small">Conectando a universitarios y jóvenes profesionales de la ciudad.</p>
                             </div>
                         </div>
@@ -356,11 +379,41 @@
             </div>
         </section>
 
+        <section class="section-padding" style="background: rgba(0,0,0,0.2);">
+            <div class="container text-center">
+                <div class="mb-5">
+                    <span class="tracking-wide text-grey-sub">Nuestra Comunidad</span>
+                    <h2 class="fw-bold mt-2 display-6 text-white">Síguenos en Redes</h2>
+                </div>
+                
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    <div class="d-flex flex-column align-items-center">
+                        <a href="https://www.facebook.com/novenaiafcjculiacan/" target="_blank" class="social-glass-btn mb-3" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <span class="text-grey-sub small tracking-wide">Facebook</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center mx-2 mx-md-4">
+                        <a href="https://www.instagram.com/explore/locations/1395322087356949/novena-iafcj-culiacan/" target="_blank" class="social-glass-btn mb-3" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <span class="text-grey-sub small tracking-wide">Instagram</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <a href="https://www.youtube.com/channel/UCwjls6re9YcW-Sd6B91iYwA" target="_blank" class="social-glass-btn mb-3" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <span class="text-grey-sub small tracking-wide">YouTube</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <footer class="glass-footer text-white py-5">
             <div class="container">
                 <div class="row text-center text-md-start">
                     <div class="col-md-4 mb-4">
-                        <h5 class="fw-bold mb-3 fs-4 text-white">NOVENA IGLESIA</h5>
+                        <h5 class="fw-bold mb-3 fs-4 text-white">LOGO IGLESIA</h5>
                         <p class="text-grey-sub small pe-md-4">Ayudando a las personas a Conocer a Dios, Encontrar Libertad, Descubrir su Propósito y Marcar la Diferencia.</p>
                     </div>
                     <div class="col-md-2 mb-4">
@@ -385,8 +438,9 @@
                             <i class="fa-solid fa-envelope me-2 mt-2"></i> hola@iglesia.com<br>
                         </p>
                         <div class="mt-3">
-                            <a href="#" class="text-grey-sub me-3 fs-5 hover-link"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="text-grey-sub me-3 fs-5 hover-link"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://www.facebook.com/novenaiafcjculiacan/" target="_blank" class="text-grey-sub me-3 fs-5 hover-link"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/explore/locations/1395322087356949/novena-iafcj-culiacan/" target="_blank" class="text-grey-sub me-3 fs-5 hover-link"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UCwjls6re9YcW-Sd6B91iYwA" target="_blank" class="text-grey-sub me-3 fs-5 hover-link"><i class="fa-brands fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
